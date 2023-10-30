@@ -6,6 +6,10 @@
 
 }
 
+.title {
+  font-size: 100px;
+}
+
 .pokemon-team {
   width: 100%;
   display: flex;

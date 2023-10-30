@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div className="container">
-      {pokemonType && <h1>Team {pokemonType[0].toUpperCase() + pokemonType.slice(1)}</h1>}
+      {pokemonType && <h1 className='title'>Team {pokemonType[0].toUpperCase() + pokemonType.slice(1)}</h1>}
       {spinner && <img src={spinner_img}></img>}
       <div className='pokemon-team'>
         {allPokemon.map((pokemon, idx) => {
