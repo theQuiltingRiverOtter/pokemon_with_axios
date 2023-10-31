@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Pokemon from './Pokemon';
 import axios from "axios";
@@ -25,13 +25,18 @@ function App() {
           img_src: response.data.sprites.front_default,
         }
       ])))
-      getFiveMore(type);
       setSpinner(false)
     } catch (err) {
       console.log(err.message)
     }
 
   }
+
+  useEffect(() => {
+    getFiveMore(pokemonType);
+  }, [pokemonType])
+
+
   const getFiveMore = async (type) => {
     try {
       const response = await axios.get(`https://pokeapi.co/api/v2/type/${type}/`)
